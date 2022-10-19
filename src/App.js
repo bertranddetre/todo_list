@@ -87,7 +87,7 @@ function App() {
             </div>
             <div className="col-auto">
               <button 
-                className="btn btn-lg btn-success mr-20" 
+                className="btn btn-lg btn-info mr-20" 
                 onClick={updateTask}
               >Modifier</button>
               <button 
@@ -105,7 +105,7 @@ function App() {
               <input 
                 value={newTask} 
                 onChange={e => setNewTask(e.target.value)} 
-                className="form-control form-control-lg" 
+                className="form-control form-control-lg text-warning" 
               />
             </div>
             <div className="col-auto">
@@ -121,9 +121,9 @@ function App() {
 
 
       {/* S'il n'y a pas de tâche en état, afficher un message */}
-      {toDo && toDo.length ? '' : 'pour l\'instant rien'}
+      {toDo && toDo.length ? '' : 'pour l\'instant rien, mais ça ne va pas rester vide longtemps'}
       
-      {/* Montrer la liste*/}
+      {/* Show la liste*/}
       {toDo && toDo
         .sort((a, b) => a.id > b.id ? 1 : -1)
         .map( (task, index) => {
@@ -136,7 +136,7 @@ function App() {
                 // si l'état de la tâche est vrai, ajouter une classe à cette div comme fait
                 className={ task.status ? 'done' : '' }
               >
-                {/* Show number of task */}
+                {/* Show le nombre de tâches */}
                 <span className="taskNumber">{index + 1}</span> 
                 <span className="taskText">{task.title}</span>
               </div>

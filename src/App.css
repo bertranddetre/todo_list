@@ -69,4 +69,7 @@ body {
   margin-right: 20px;
 }
 
+.form-control {
+  border-color: #EE6123;
+}
 
