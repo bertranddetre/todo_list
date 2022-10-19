@@ -1,6 +1,6 @@
 body {
-  background-color: #F2D398;
-  color: #D78521;
+  background-color: #FEEFE5;
+  color: #EE6123;
 }
 
 .App {
@@ -8,7 +8,7 @@ body {
 }
 
 .taskBg {
-  background-color: #555;
+  background-color: #FFCF00;
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
@@ -23,8 +23,8 @@ body {
 }
 
 .taskNumber {
-  color: #999;
-  border: 1px solid #999;
+  color: #EE6123;
+  border: 1px solid #EE6123;
   border-radius: 50%;
   width: 26px;
   height: 26px;
@@ -58,7 +58,7 @@ body {
   display: inline-block;
   margin: 0px 10px 0 10px;
   cursor: pointer;
-  color: #00ff89;
+  color: #EE6123;
 }
 
 .taskBg .iconsWrap span:hover {
