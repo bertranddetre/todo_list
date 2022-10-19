@@ -1,5 +1,7 @@
-1. [Create React App](https://github.com/facebook/create-react-app).
+### 1. créer un projet React avec create-react-app
 
-### 2. `npm start`
+### 2. lancer `npm start`
 
-### 3. install Bootstrap et font awesome
+### 3. installer Bootstrap et font awesome
+
+### 4 . le site est consultable directement sur le web : https://beamish-palmier-642652.netlify.app/
