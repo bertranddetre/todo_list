@@ -1,7 +1,9 @@
-### 1. créer un projet React avec create-react-app
+Ce que j'ai fait :
 
-### 2. lancer `npm start`
+### 1. créé un projet React avec create-react-app
 
-### 3. installer Bootstrap et font awesome
+### 2. lancé `npm start`
 
-### 4 . le site est consultable directement sur le web : https://beamish-palmier-642652.netlify.app/
+### 3. installé Bootstrap et Font awesome
+
+le site est consultable directement sur le web : https://beamish-palmier-642652.netlify.app/
