@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons'
@@ -8,15 +7,14 @@ import './App.css';
 
 function App() {
 
-  // Tasks (ToDo List) State
+  // Task State
   const [toDo, setToDo] = useState([]);
 
   // Temp State
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
 
-  // Add task 
-  ////////////////////////////////////////// 
+  // Ajouter une tâche 
   const addTask = () => {
     if(newTask) {
       let num = toDo.length + 1; 
@@ -26,15 +24,13 @@ function App() {
     }
   }
 
-  // Delete task 
-  ////////////////////////////////////////// 
+  // Supprimer une tâche 
   const deleteTask = (id) => {
     let newTasks = toDo.filter((task) => task.id !== id);
     setToDo(newTasks);
   }
 
-  // mark task as done or completed
-  ////////////////////////////////////////// 
+  // Marquer une tâche comme accomplie
   const markDone = (id) => {
     const newTasks = toDo.map((task) => {
       if (task.id === id){
@@ -45,14 +41,12 @@ function App() {
     setToDo(newTasks);
   }
 
-  // cancel update
-  ////////////////////////////////////////// 
+  // Annuler la MAJ
   const cancelUpdate = () => {
     setUpdateData('');
   }
 
-  // Change task for update
-  ////////////////////////////////////////// 
+  // Changer la tâche pour la MAJ
   const changeTask = (e) => {
     let newEntry = {
       id: updateData.id,
@@ -62,8 +56,7 @@ function App() {
     setUpdateData(newEntry);
   }
 
-  // update task 
-  ////////////////////////////////////////// 
+  // MAJ d'une tâche 
   const updateTask = () => {
     let filterRecords = [...toDo].filter( task=>task.id !== updateData.id);
     let updatedObject = [...filterRecords, updateData];
@@ -75,11 +68,11 @@ function App() {
   return (
     <div className="container App">
       
-      <br /><br />
+      <br/><br/>
 
-      <h2>Liste de mes tâches à faire</h2>
+      <h2>Ma liste de trucs à faire</h2>
 
-      <br /><br />
+      <br/><br/>
       
 
       {updateData && updateData ? (
@@ -96,14 +89,14 @@ function App() {
               <button 
                 className="btn btn-lg btn-success mr-20" 
                 onClick={updateTask}
-              >Update</button>
+              >Modifier</button>
               <button 
                 className="btn btn-lg btn-warning" 
                 onClick={cancelUpdate}
-              >Cancel</button>
+              >Supprimer</button>
             </div>
           </div>
-          <br />
+          <br/>
         </>
       ) : (
         <>
@@ -119,18 +112,18 @@ function App() {
               <button 
                 className="btn btn-lg btn-success" 
                 onClick={addTask}
-              >Add Task</button>
+              >Ajouter</button>
             </div>
           </div>
-          <br />
+          <br/>
         </>
       )}
 
 
-      {/* If there are no to dos in state, display a message   */}
-      {toDo && toDo.length ? '' : 'No tasks...'}
+      {/* S'il n'y a pas de tâche en état, afficher un message */}
+      {toDo && toDo.length ? '' : 'pour l\'instant rien'}
       
-      {/* Show to dos   */}
+      {/* Montrer la liste*/}
       {toDo && toDo
         .sort((a, b) => a.id > b.id ? 1 : -1)
         .map( (task, index) => {
@@ -140,7 +133,7 @@ function App() {
             <div className="col taskBg">
               
               <div 
-                // if task status is true, add class to this div named as done
+                // si l'état de la tâche est vrai, ajouter une classe à cette div comme fait
                 className={ task.status ? 'done' : '' }
               >
                 {/* Show number of task */}
